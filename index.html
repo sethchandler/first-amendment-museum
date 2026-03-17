@@ -30,8 +30,18 @@ header .count { font-size: 0.85em; color: #a08060; margin-top: 12px; }
 /* Nav */
 nav {
   background: var(--sidebar-bg); border-bottom: 1px solid var(--border);
-  padding: 12px 40px; display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+  padding: 10px 40px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px;
   position: sticky; top: 0; z-index: 100;
+}
+.nav-main {
+  display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; align-items: center;
+}
+.nav-sep {
+  color: var(--border); font-size: 0.9em; margin: 0 2px; user-select: none;
+}
+.nav-extras {
+  display: flex; gap: 10px; justify-content: center;
+  padding-top: 4px; border-top: 1px solid var(--border); width: 100%;
 }
 nav a {
   color: var(--accent); text-decoration: none; font-size: 0.82em; padding: 4px 12px;
@@ -39,6 +49,7 @@ nav a {
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 nav a:hover { background: var(--accent); color: #fff; }
+.nav-extra-link:hover { color: #fff !important; }
 
 /* Layout */
 .container { max-width: 960px; margin: 0 auto; padding: 30px 40px; }
@@ -204,6 +215,156 @@ nav a:hover { background: var(--accent); color: #fff; }
 .theory-card .theory-links { font-size: 0.85em; color: var(--muted); }
 .theory-card .theory-links .case-link { font-size: 0.85em; }
 
+/* Gift Shop */
+/* Docent's Guide */
+.docent-section { margin-top: 60px; border-top: 2px solid #2E5D4B; padding-top: 30px; }
+.docent-section > h2 { font-size: 1.6em; text-align: center; color: #2E5D4B; margin-bottom: 8px; letter-spacing: 2px; }
+.docent-section > .section-subtitle { text-align: center; color: var(--muted); font-style: italic; margin-bottom: 30px; font-size: 0.92em; }
+.docent-content { max-width: 760px; margin: 0 auto; line-height: 1.75; font-size: 0.95em; }
+.docent-content h3 { color: #8B4513; font-size: 1.2em; margin-top: 32px; margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+.docent-content h4 { color: #2E5D4B; font-size: 1.05em; margin-top: 24px; margin-bottom: 8px; }
+.docent-content p { margin-bottom: 14px; color: var(--text); }
+.docent-content .stop-number { display: inline-block; background: #8B4513; color: #fff; padding: 2px 10px; border-radius: 3px; font-size: 0.85em; font-weight: bold; margin-right: 8px; }
+.docent-content .tour-tip { background: var(--sidebar-bg); border-left: 3px solid #2E5D4B; padding: 12px 16px; margin: 16px 0; font-size: 0.9em; color: var(--muted); }
+
+.giftshop-section { margin-top: 60px; border-top: 2px solid #B8860B; padding-top: 30px; }
+.giftshop-section > h2 { font-size: 1.6em; text-align: center; color: #B8860B; margin-bottom: 8px; letter-spacing: 2px; }
+.giftshop-section > .section-subtitle { text-align: center; color: var(--muted); font-style: italic; margin-bottom: 30px; font-size: 0.92em; }
+
+.shop-tabs {
+  display: flex; justify-content: center; gap: 8px; margin-bottom: 28px; flex-wrap: wrap;
+}
+.shop-tab {
+  padding: 8px 18px; border: 1px solid #B8860B; border-radius: 20px; cursor: pointer;
+  font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85em; color: #B8860B;
+  background: transparent; transition: all 0.2s;
+}
+.shop-tab:hover, .shop-tab.active { background: #B8860B; color: #fff; }
+
+/* Artifacts */
+.artifact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+.artifact-card {
+  padding: 18px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px;
+  border-left: 4px solid #B8860B; box-shadow: 0 2px 6px rgba(0,0,0,0.05); position: relative;
+}
+.artifact-card .artifact-icon { font-size: 2.2em; margin-bottom: 8px; }
+.artifact-card .artifact-tag {
+  position: absolute; top: 12px; right: 12px; font-size: 0.65em; padding: 2px 8px;
+  background: #B8860B; color: #fff; border-radius: 10px; font-family: 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.5px; text-transform: uppercase;
+}
+.artifact-card .artifact-name { font-weight: 700; font-size: 1em; color: #2c1810; margin-bottom: 4px; }
+.artifact-card .artifact-price { font-size: 0.9em; color: #B8860B; font-weight: 700; margin-bottom: 8px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.artifact-card .artifact-desc { font-size: 0.88em; line-height: 1.6; color: #444; margin-bottom: 10px; }
+.artifact-card .artifact-buy {
+  display: inline-block; padding: 6px 16px; background: #B8860B; color: #fff; border-radius: 4px;
+  font-size: 0.8em; font-family: 'Helvetica Neue', Arial, sans-serif; text-decoration: none;
+  cursor: pointer; transition: background 0.2s;
+}
+.artifact-card .artifact-buy:hover { background: #9a7209; }
+.artifact-card .artifact-case-link { font-size: 0.82em; margin-left: 8px; }
+
+/* Quiz */
+.quiz-container { max-width: 680px; margin: 0 auto; }
+.quiz-question {
+  margin-bottom: 24px; padding: 18px; background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 8px; border-left: 4px solid #6B4C9A;
+}
+.quiz-question .q-number { font-size: 0.75em; color: #6B4C9A; font-family: 'Helvetica Neue', Arial, sans-serif; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.quiz-question .q-text { font-weight: 600; margin-bottom: 12px; font-size: 0.95em; }
+.quiz-answer {
+  display: block; width: 100%; text-align: left; padding: 10px 14px; margin-bottom: 6px;
+  background: #faf8f4; border: 1px solid var(--border); border-radius: 6px; cursor: pointer;
+  font-family: 'Georgia', serif; font-size: 0.88em; line-height: 1.5; transition: all 0.2s;
+}
+.quiz-answer:hover { background: #f0ece4; border-color: #6B4C9A; }
+.quiz-answer.selected { background: #e8dff5; border-color: #6B4C9A; }
+.quiz-submit {
+  display: block; margin: 20px auto; padding: 12px 32px; background: #6B4C9A; color: #fff;
+  border: none; border-radius: 6px; font-size: 1em; font-family: 'Georgia', serif; cursor: pointer;
+}
+.quiz-submit:hover { background: #5a3d85; }
+.quiz-result {
+  max-width: 680px; margin: 0 auto; padding: 24px; background: var(--card-bg); border: 2px solid #6B4C9A;
+  border-radius: 10px; text-align: center; display: none;
+}
+.quiz-result .result-name { font-size: 1.4em; color: #6B4C9A; font-weight: 700; margin-bottom: 2px; }
+.quiz-result .result-title { font-size: 1em; color: #B8860B; font-style: italic; margin-bottom: 12px; }
+.quiz-result .result-desc { font-size: 0.92em; line-height: 1.6; margin-bottom: 12px; text-align: left; }
+.quiz-result .result-motto { font-style: italic; color: var(--muted); font-size: 0.9em; }
+.quiz-reset { margin-top: 16px; padding: 8px 20px; background: transparent; border: 1px solid #6B4C9A; color: #6B4C9A; border-radius: 4px; cursor: pointer; font-family: 'Georgia', serif; }
+
+/* Pocket Constitution */
+.pocket-container { max-width: 680px; margin: 0 auto; }
+.pocket-instructions { text-align: center; margin-bottom: 16px; font-size: 0.92em; color: var(--muted); }
+.pocket-search { width: 100%; padding: 10px 16px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.95em; font-family: 'Georgia', serif; margin-bottom: 12px; }
+.pocket-picks { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; min-height: 40px; }
+.pocket-chip {
+  display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: #e8dff5;
+  border-radius: 16px; font-size: 0.82em; color: #6B4C9A; font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.pocket-chip .chip-remove { cursor: pointer; font-weight: 700; color: #999; }
+.pocket-chip .chip-remove:hover { color: #c00; }
+.pocket-suggestions { max-height: 200px; overflow-y: auto; border: 1px solid var(--border); border-radius: 6px; display: none; }
+.pocket-suggestion { padding: 8px 14px; cursor: pointer; font-size: 0.88em; transition: background 0.1s; }
+.pocket-suggestion:hover { background: var(--hover); }
+.pocket-generate { display: block; margin: 16px auto; padding: 10px 28px; background: #2E5D4B; color: #fff; border: none; border-radius: 6px; font-family: 'Georgia', serif; cursor: pointer; }
+.pocket-generate:hover { background: #244a3c; }
+.pocket-card {
+  display: none; max-width: 500px; margin: 20px auto; padding: 24px; background: #fdf8f0;
+  border: 2px solid #B8860B; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.pocket-card h3 { text-align: center; color: #B8860B; font-size: 0.9em; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.pocket-card .pocket-item { margin-bottom: 8px; font-size: 0.88em; padding-bottom: 8px; border-bottom: 1px dotted var(--border); }
+.pocket-card .pocket-item:last-child { border-bottom: none; }
+.pocket-card .pocket-case-name { font-weight: 700; color: #2c1810; }
+.pocket-card .pocket-holding { font-size: 0.85em; color: var(--muted); margin-top: 2px; }
+
+/* Mad Libs */
+.madlibs-container { max-width: 680px; margin: 0 auto; }
+.madlibs-template { font-size: 1.1em; line-height: 2; margin-bottom: 20px; text-align: center; padding: 20px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; }
+.madlibs-blank { display: inline-block; min-width: 120px; border-bottom: 2px solid #C0392B; text-align: center; padding: 2px 4px; color: #C0392B; font-weight: 700; cursor: pointer; }
+.madlibs-controls { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+.madlibs-field label { display: block; font-size: 0.82em; color: var(--muted); margin-bottom: 4px; font-family: 'Helvetica Neue', Arial, sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+.madlibs-field select, .madlibs-field input {
+  width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px;
+  font-family: 'Georgia', serif; font-size: 0.95em;
+}
+.madlibs-analysis { padding: 16px; background: #fdf8f0; border-left: 3px solid #C0392B; border-radius: 0 6px 6px 0; font-size: 0.9em; line-height: 1.6; display: none; }
+
+/* Trading Cards */
+.cards-container { max-width: 400px; margin: 0 auto; text-align: center; }
+.trading-card {
+  display: none; margin: 0 auto; padding: 0; background: var(--card-bg); border: 3px solid #B8860B;
+  border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  max-width: 350px; text-align: left;
+}
+.tc-header { background: linear-gradient(135deg, #2c1810, #4a2c1a); padding: 14px 18px; color: #f5e6d0; }
+.tc-header .tc-rarity { font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.tc-header .tc-name { font-size: 1.15em; font-weight: 700; margin-top: 2px; }
+.tc-header .tc-cite { font-size: 0.78em; color: #c4a882; }
+.tc-rarity-legendary { color: #FFD700; }
+.tc-rarity-epic { color: #A855F7; }
+.tc-rarity-rare { color: #3B82F6; }
+.tc-rarity-uncommon { color: #22C55E; }
+.tc-rarity-common { color: #9CA3AF; }
+.tc-body { padding: 14px 18px; }
+.tc-body .tc-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-family: 'Helvetica Neue', Arial, sans-serif; margin-top: 10px; }
+.tc-body .tc-label:first-child { margin-top: 0; }
+.tc-body .tc-value { font-size: 0.85em; line-height: 1.5; margin-bottom: 4px; }
+.tc-footer { padding: 10px 18px; background: #f5f3ef; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.tc-footer .tc-gallery-tag { font-size: 0.7em; padding: 2px 8px; border-radius: 10px; color: #fff; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.tc-footer .tc-year { font-size: 0.85em; color: var(--muted); font-weight: 700; }
+.draw-card {
+  display: inline-block; margin: 20px auto; padding: 12px 32px; background: #B8860B; color: #fff;
+  border: none; border-radius: 6px; font-size: 1em; font-family: 'Georgia', serif; cursor: pointer;
+}
+.draw-card:hover { background: #9a7209; }
+.card-counter { margin-top: 10px; font-size: 0.82em; color: var(--muted); font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+.shop-panel { display: none; }
+.shop-panel.active { display: block; }
+
 footer {
   text-align: center; padding: 30px; color: var(--muted); font-size: 0.82em;
   border-top: 1px solid var(--border); margin-top: 40px;
@@ -228,22 +389,29 @@ footer {
 </header>
 
 <nav>
-  <a href="#section-outline">Outline</a>
-  <a href="#section-gallery">Case Gallery</a>
-  <a href="#section-history">History</a>
-  <a href="#section-theories">Theories</a>
-  <a href="#g-religion">Religion</a>
-  <a href="#g-speech-content">Content-Based</a>
-  <a href="#g-speech-neutral">Content-Neutral</a>
-  <a href="#g-speech-conduct">Conduct</a>
-  <a href="#g-speech-unprotected">Unprotected</a>
-  <a href="#g-speech-commercial">Commercial</a>
-  <a href="#g-speech-employees">Employees</a>
-  <a href="#g-speech-students">Students</a>
-  <a href="#g-speech-conditions">Gov't Speech</a>
-  <a href="#g-speech-prior">Prior Restraint</a>
-  <a href="#g-press">Press</a>
-  <a href="#g-association">Association</a>
+  <div class="nav-main">
+    <a href="#section-outline">Outline</a>
+    <a href="#section-gallery">Case Gallery</a>
+    <a href="#section-history">History</a>
+    <a href="#section-theories">Theories</a>
+    <span class="nav-sep">|</span>
+    <a href="#g-religion">Religion</a>
+    <a href="#g-speech-content">Content-Based</a>
+    <a href="#g-speech-neutral">Content-Neutral</a>
+    <a href="#g-speech-conduct">Conduct</a>
+    <a href="#g-speech-unprotected">Unprotected</a>
+    <a href="#g-speech-commercial">Commercial</a>
+    <a href="#g-speech-employees">Employees</a>
+    <a href="#g-speech-students">Students</a>
+    <a href="#g-speech-conditions">Gov't Speech</a>
+    <a href="#g-speech-prior">Prior Restraint</a>
+    <a href="#g-press">Press</a>
+    <a href="#g-association">Association</a>
+  </div>
+  <div class="nav-extras">
+    <a href="#section-docent" class="nav-extra-link" style="color:#2E5D4B;border-color:#2E5D4B;">&#x1F3DB; Docent&rsquo;s Guide</a>
+    <a href="#section-giftshop" class="nav-extra-link" style="color:#B8860B;border-color:#B8860B;">&#x1F6CD; Gift Shop</a>
+  </div>
 </nav>
 
 <div class="container" id="section-outline">
@@ -469,6 +637,128 @@ footer {
   <p class="section-subtitle">The Intellectual Frameworks Behind the Doctrine</p>
   <div id="theories-container"></div>
 </div>
+
+<div class="docent-section" id="section-docent">
+  <h2>DOCENT&rsquo;S GUIDE</h2>
+  <p class="section-subtitle">A 30-Minute Self-Guided Tour &mdash; 8 Stops Through 800 Years of the First Amendment</p>
+  <div class="docent-content">
+    <h3>Welcome to the Museum</h3>
+    <p>You&rsquo;re about to walk through 800 years of the most radical experiment in human governance: the idea that the state cannot tell you what to think, what to believe, or what to say. Forty-five words in the First Amendment. One hundred and forty-four Supreme Court cases. Thirty-four historical milestones. Eighteen competing theories about why any of it matters.</p>
+    <p>This guide is your docent. It will walk you through the museum in roughly 30 minutes, hitting the highlights and pointing you toward the rooms where you&rsquo;ll want to linger on your own. You won&rsquo;t see everything&mdash;no one does in a first visit. That&rsquo;s the point. Come back.</p>
+
+    <h3>How the Museum Works</h3>
+    <p>The museum is a single interactive webpage. Everything is self-contained&mdash;no logins, no downloads, no tracking. It has four main sections, accessible from the sticky navigation bar at the top:</p>
+    <p>The <strong>Outline</strong> is the black-letter law&mdash;the rules, organized by topic. Every case name you see is clickable. Click one and a card pops up with the facts, holding, and any notable dissent. This is your reference shelf.</p>
+    <p>The <strong>Case Gallery</strong> is the museum&rsquo;s permanent collection: all 144 cases, organized into 13 galleries by topic. You can scroll through them or use the search bar to find a case by name, year, or keyword. Try typing &ldquo;flag&rdquo; or &ldquo;prayer&rdquo; and watch the collection filter in real time.</p>
+    <p>The <strong>History Gallery</strong> is a timeline tracing the idea of the First Amendment from Magna Carta to the age of AI. Each entry is tagged by wing&mdash;Speech, Religion, or both&mdash;and links back to the cases in the permanent collection.</p>
+    <p>The <strong>Theories Gallery</strong> is the intellectual engine room. Why do we protect speech? What does religious liberty actually require? Eighteen frameworks organized into two wings, each divided into canonical and contemporary approaches.</p>
+    <div class="tour-tip">You can open the museum on your phone. It&rsquo;s fully responsive. Riding the bus to class? Pull it up and click through a gallery.</div>
+
+    <h3>The Tour: 30 Minutes, 8 Stops</h3>
+    <p>Each stop takes 3&ndash;4 minutes. Read the description, then click the links on the website and explore. If something grabs you, go down the rabbit hole&mdash;you can always pick up the tour where you left off.</p>
+
+    <h4><span class="stop-number">Stop 1</span> The Lobby &mdash; Get Your Bearings (2 min)</h4>
+    <p>Open the museum. Look at the header: 144 leading cases, 34 historical milestones, 18 theories. That&rsquo;s the scope of the First Amendment in American law. Scroll down slowly through the Outline. Don&rsquo;t read it all&mdash;just notice the architecture. The Religion Clauses come first (Establishment, then Free Exercise). Then Free Speech (content-based, content-neutral, expressive conduct, unprotected expression, and on and on). Then Press. Then Association.</p>
+    <p>Notice that every rule has a case attached to it. The First Amendment is not a set of abstract principles floating in the ether. It&rsquo;s built, brick by brick, out of real disputes between real people and their government. Click on any case name that catches your eye. Read the popup. Close it. That&rsquo;s how the whole museum works.</p>
+
+    <h4><span class="stop-number">Stop 2</span> The History Gallery &mdash; Before 1791 (4 min)</h4>
+    <p>Click &ldquo;History&rdquo; in the nav bar. Scroll to the Pre-Colonial &amp; English Roots era. Read the entry on Milton&rsquo;s Areopagitica (1644). This is the ur-text of the free speech tradition&mdash;and it was itself an act of illegal publishing. Milton didn&rsquo;t ask permission to publish his pamphlet arguing against requiring permission to publish. Appreciate the irony.</p>
+    <p>Now read Roger Williams &amp; Rhode Island (1636&ndash;1663). Williams was banished from Massachusetts for his religious dissent and went on to found the first political community in modern history built on full religious freedom. He coined the phrase &ldquo;wall of separation between the garden of the church and the wilderness of the world.&rdquo; Jefferson and the Supreme Court would borrow it centuries later.</p>
+    <p>Click the &ldquo;See:&rdquo; case links at the bottom of each entry. They&rsquo;ll take you to the cases in the permanent collection that connect to these historical roots. Notice how ideas from the 1640s show up in Supreme Court opinions from the 1940s and 2020s.</p>
+
+    <h4><span class="stop-number">Stop 3</span> The Founding Era &mdash; Madison&rsquo;s Genius (3 min)</h4>
+    <p>Stay in the History Gallery and scroll to The Founding Era. Read three entries in order: the Virginia Declaration of Rights (1776), Jefferson&rsquo;s Virginia Statute for Religious Freedom (1786), and Madison&rsquo;s Memorial and Remonstrance (1785).</p>
+    <p>Here&rsquo;s what to notice: Madison changed one word in the Virginia Declaration&mdash;from &ldquo;toleration&rdquo; to &ldquo;free exercise.&rdquo; That&rsquo;s not a synonym. Toleration means the government graciously permits you to believe what you want. Free exercise means the right is yours already and the government can&rsquo;t touch it. That single word shift&mdash;from government privilege to inherent right&mdash;is the DNA of the First Amendment.</p>
+    <p>Then read The Sedition Act of 1798. Seven years after ratification, Congress passed a law making it a crime to criticize the government. It was a disaster. Justice Brennan would later write that &ldquo;the attack upon its validity has carried the day in the court of history.&rdquo; Click the case link to <em>New York Times v. Sullivan</em> (1964) and read how the Sedition Act&rsquo;s ghost haunts defamation law 170 years later.</p>
+
+    <h4><span class="stop-number">Stop 4</span> The Case Gallery &mdash; A Flag Burns in Dallas (4 min)</h4>
+    <p>Click &ldquo;Case Gallery&rdquo; in the nav bar. Use the search box and type &ldquo;Johnson.&rdquo; Click on <em>Texas v. Johnson</em> (1989).</p>
+    <p>Read the facts. A protester at the 1984 Republican National Convention burned an American flag in front of Dallas City Hall while the crowd chanted &ldquo;America, the red, white, and blue, we spit on you.&rdquo; No one was hurt. One witness was so offended he went home and buried the flag&rsquo;s remains in his backyard.</p>
+    <p>Now read the holding: &ldquo;If there is a bedrock principle underlying the First Amendment, it is that the government may not prohibit the expression of an idea simply because society finds the idea itself disagreeable or offensive.&rdquo; That&rsquo;s Justice Brennan. That single sentence might be the most important thing you learn in this course.</p>
+    <p>Read the dissent. Rehnquist invoked Iwo Jima, the Star-Spangled Banner, and two centuries of poetry. Stevens argued the prosecution targeted the method, not the message. Both lost, 5&ndash;4. Justice Kennedy, who joined the majority, wrote a concurrence confessing that the case &ldquo;exacts its personal toll&rdquo;&mdash;the flag &ldquo;protects those who hold it in contempt.&rdquo;</p>
+    <p>This is the First Amendment at its most difficult and its most honest.</p>
+
+    <h4><span class="stop-number">Stop 5</span> The Theories Gallery &mdash; Why Do We Do This? (4 min)</h4>
+    <p>Click &ldquo;Theories&rdquo; in the nav bar. You&rsquo;re now in the intellectual engine room. Start with the Free Speech Theories wing.</p>
+    <p>Read the first three canonical theories: The Marketplace of Ideas (Holmes: truth wins in competition), Self-Governance (Meiklejohn: democracy needs informed citizens), and Autonomy (Baker: speech is about the speaker&rsquo;s dignity, not society&rsquo;s benefit).</p>
+    <p>Here&rsquo;s a question to carry with you: Which theory best explains why we protect flag burning? The marketplace of ideas? Burning a flag doesn&rsquo;t exactly &ldquo;compete&rdquo; in a marketplace of propositions. Self-governance? Maybe&mdash;it&rsquo;s political protest. Autonomy? Now we&rsquo;re getting somewhere. The tolerance theory? Bollinger would say protecting the flag burner teaches us all to live with disagreement.</p>
+    <p>Now scroll down to the Expanded &amp; Contemporary Approaches. Read the Anti-Subordination Theory (Lawrence, Matsuda, Delgado). These scholars argue that some speech&mdash;hate speech, cross-burnings&mdash;functions as an act of subordination, not an idea competing for acceptance. Click the linked cases: <em>R.A.V. v. City of St. Paul</em> and <em>Virginia v. Black</em>. Notice the tension. The Court says even within unprotected categories, you can&rsquo;t impose viewpoint-based distinctions&mdash;but cross-burning with intent to intimidate can be banned. Where&rsquo;s the line?</p>
+    <p>You don&rsquo;t have to resolve this today. But the fact that smart people disagree about it is the point.</p>
+
+    <h4><span class="stop-number">Stop 6</span> The Religion Wing &mdash; Smith and Its Discontents (4 min)</h4>
+    <p>Click back to &ldquo;Theories&rdquo; and scroll to Religion Clause Theories. Read Formal Neutrality (Scalia&rsquo;s <em>Smith</em> position: no special treatment for religion) and then Accommodationism (McConnell&rsquo;s position: the Free Exercise Clause was originally understood to require exemptions).</p>
+    <p>These aren&rsquo;t just academic debates. They map directly onto real cases. Click the linked case for <em>Smith</em> (Employment Division v. Smith, 1990). Two members of the Native American Church were fired for using peyote in a religious ceremony and denied unemployment benefits. The Court said: tough luck. A neutral, generally applicable law doesn&rsquo;t need a religious exemption.</p>
+    <p>Now search the Case Gallery for &ldquo;Fulton.&rdquo; Read <em>Fulton v. Philadelphia</em> (2021). Catholic Social Services wouldn&rsquo;t certify same-sex couples as foster parents. The City cut off referrals. The Court ruled for CSS&mdash;but on narrow grounds. The contract had a discretionary exemption clause, so it wasn&rsquo;t &ldquo;generally applicable&rdquo; under <em>Smith</em>. Three Justices wanted to overrule <em>Smith</em> entirely. Justice Barrett wrote separately: she&rsquo;s sympathetic to overruling <em>Smith</em> but &ldquo;skeptical about swapping Smith&rsquo;s categorical antidiscrimination approach for an equally categorical strict scrutiny regime.&rdquo;</p>
+    <p>This is the live wire in Religion Clause law. <em>Smith</em> is wounded but standing. Pay attention.</p>
+
+    <h4><span class="stop-number">Stop 7</span> The History Gallery &mdash; The 21st Century (4 min)</h4>
+    <p>Go back to the History Gallery and scroll to The 21st Century. Read the last four entries: <em>Citizens United</em> (2010), <em>Reed v. Town of Gilbert</em> (2015), <em>Kennedy v. Bremerton</em> (2022), and <em>303 Creative</em> (2023).</p>
+    <p>Notice a pattern? The Roberts Court has simultaneously expanded both free speech and free exercise protections. Content-based speech restrictions almost always lose (<em>Reed</em>). Religious exercise claims almost always win (<em>Fulton</em>, <em>Kennedy</em>, <em>303 Creative</em>). Campaign finance restrictions fell (<em>Citizens United</em>). Compelled-speech claims succeeded (<em>303 Creative</em>).</p>
+    <p>Now read Social Media, AI &amp; the Digital First Amendment. The Court called the internet &ldquo;the modern public square,&rdquo; but the old frameworks are straining. Can states force platforms to host content they want to suppress? Is algorithmic curation &ldquo;speech&rdquo;? Does an AI have First Amendment rights? These questions are arriving at the Court&rsquo;s doorstep right now. You will encounter them in practice.</p>
+
+    <h4><span class="stop-number">Stop 8</span> The Outline as Reference (3 min)</h4>
+    <p>Every museum tour ends in the gift shop&mdash;ours is the Outline itself, the part you scrolled past at the beginning.</p>
+    <p>Go back to &ldquo;Outline&rdquo; in the nav bar. This time, pick one topic that interests you and read the rules carefully. Click every case. Read each popup. For example, scroll to &ldquo;Regulation of Unprotected Expression&rdquo; and work through Fighting Words, True Threats, Incitement, Obscenity, and Defamation. That&rsquo;s five doctrines, each with a different test, each built from specific cases, each with real facts involving real people.</p>
+    <p>This outline is your study reference. When you&rsquo;re preparing for class, come here first. When you&rsquo;re reviewing for the bar exam, come here first. When a case name comes up in discussion and you can&rsquo;t quite remember the holding, type it in the search bar. The museum is always open.</p>
+
+    <h3>A Note Before You Go</h3>
+    <p>The First Amendment is 45 words long. It has generated more Supreme Court litigation than any other provision of the Constitution. It protects flag burners and funeral picketers and Nazis marching through neighborhoods of Holocaust survivors. It shields churches from anti-discrimination laws and keeps the government out of your prayers. It lets newspapers publish stolen Pentagon secrets and bars the state from compelling you to say the Pledge of Allegiance.</p>
+    <p>None of this is comfortable. That&rsquo;s the point. Justice Kennedy said it best in <em>Texas v. Johnson</em>: &ldquo;The hard fact is that sometimes we must make decisions we do not like. We make them because they are right, right in the sense that the law and the Constitution, as we see them, compel the result.&rdquo;</p>
+    <p>The museum you&rsquo;ve just toured is a map of those hard decisions. Use it well.</p>
+  </div>
+</div>
+
+<div class="giftshop-section" id="section-giftshop">
+  <h2>THE GIFT SHOP</h2>
+  <p class="section-subtitle">Every museum tour ends here. No actual commerce was harmed in the making of this shop.</p>
+
+  <div class="shop-tabs">
+    <button class="shop-tab active" data-panel="artifacts-panel">Artifacts &amp; Merch</button>
+    <button class="shop-tab" data-panel="quiz-panel">What Theorist Are You?</button>
+    <button class="shop-tab" data-panel="pocket-panel">Pocket Constitution</button>
+    <button class="shop-tab" data-panel="madlibs-panel">Design Your Own Amendment</button>
+    <button class="shop-tab" data-panel="cards-panel">Trading Cards</button>
+  </div>
+
+  <div id="artifacts-panel" class="shop-panel active">
+    <div class="artifact-grid" id="artifact-grid"></div>
+  </div>
+
+  <div id="quiz-panel" class="shop-panel">
+    <div class="quiz-container" id="quiz-container"></div>
+    <div class="quiz-result" id="quiz-result"></div>
+  </div>
+
+  <div id="pocket-panel" class="shop-panel">
+    <div class="pocket-container">
+      <p class="pocket-instructions">Pick your 5 favorite cases to create a personalized First Amendment starter pack.</p>
+      <input type="text" class="pocket-search" id="pocket-search" placeholder="Search for a case..." />
+      <div class="pocket-suggestions" id="pocket-suggestions"></div>
+      <div class="pocket-picks" id="pocket-picks"></div>
+      <button class="pocket-generate" id="pocket-generate">Generate My Card</button>
+      <div class="pocket-card" id="pocket-card"></div>
+    </div>
+  </div>
+
+  <div id="madlibs-panel" class="shop-panel">
+    <div class="madlibs-container">
+      <div class="madlibs-template" id="madlibs-display">
+        &ldquo;<span class="madlibs-blank" id="ml-entity">______</span> shall make no law <span class="madlibs-blank" id="ml-action">______</span> the freedom of <span class="madlibs-blank" id="ml-right">______</span>.&rdquo;
+      </div>
+      <div class="madlibs-controls" id="madlibs-controls"></div>
+      <div class="madlibs-analysis" id="madlibs-analysis"></div>
+    </div>
+  </div>
+
+  <div id="cards-panel" class="shop-panel">
+    <div class="cards-container">
+      <p style="color:var(--muted);font-size:0.92em;margin-bottom:16px;">Draw a random case from the collection. Rarity based on citation count.</p>
+      <button class="draw-card" id="draw-card">Draw a Card</button>
+      <div class="trading-card" id="trading-card"></div>
+      <div class="card-counter" id="card-counter"></div>
+    </div>
+  </div>
+</div>
 </div>
 
 <div class="modal-overlay" id="modal-overlay">
@@ -668,10 +958,263 @@ function buildTheories() {
   });
 }
 
+// ========== GIFT SHOP ==========
+const artifactData = [{"id":"tinker-armband","name":"Replica Tinker Black Armband","caseRef":"tinker","price":"$17.69","image":"🖤","description":"Handcrafted black felt armband, one size fits all. Wear it to math class and wait for the Supreme Court to confirm what Mary Beth Tinker already knew: you do not shed your constitutional rights at the schoolhouse gate. Comes with a certificate of non-disruption. Dry clean only—not because it's delicate, but because the Des Moines school board would want it that way.","tag":"Best Seller"},{"id":"cohen-sweatshirt","name":"\"Expletive the Draft\" Sweatshirt","caseRef":"cohen_v_ca","price":"$40.19","image":"👕","description":"Premium cotton-blend crewneck bearing the exact four-word phrase that Paul Robert Cohen wore into the Los Angeles County Courthouse in 1968. We would print it here, but Justice Harlan said it best: 'one man's vulgarity is another's lyric.' You'll know it when you see it. Machine washable. Not recommended for courthouse visits in jurisdictions that haven't read the opinion.","tag":"Iconic"},{"id":"maine-voucher","name":"Maine Religious School Voucher","caseRef":"carson_makin","price":"$9.55","image":"🎓","description":"A souvenir replica of a Maine tuition assistance voucher, now constitutionally redeemable at the religious school of your choice. Suitable for framing. The State of Maine spent years arguing it could fund private education but exclude religious schools. The Court disagreed, 6–3. This voucher is not legal tender, but it is a reminder that the Free Exercise Clause has teeth.","tag":"New Arrival"},{"id":"ten-commandments","name":"Miniature Ten Commandments Monument","caseRef":"van_orden","price":"$24.99","image":"🪨","description":"A handsome 4-inch resin replica of the Ten Commandments monument on the Texas State Capitol grounds—the one the Court said was constitutional (Van Orden) the same day it struck down a different display in Kentucky (McCreary). Context is everything. Display it among 16 other monuments and 21 historical markers and you're celebrating legal history. Display it alone on your desk and you might be establishing religion. We include both opinions so you can decide.","tag":"Paradox Collection"},{"id":"sullivan-ad","name":"\"Heed Their Rising Voices\" Advertisement","caseRef":"nyt_sullivan","price":"$19.64","image":"📰","description":"Museum-quality reproduction of the full-page New York Times advertisement from March 29, 1960, signed by 64 prominent Americans. It contained minor factual errors about events in Montgomery, Alabama. Commissioner L.B. Sullivan sued for libel—and won $500,000 at trial. The Supreme Court reversed and, in doing so, constitutionalized defamation law forever. Printed on archival paper. The factual errors are included, because they're the whole point.","tag":"Foundation Stone"},{"id":"wedding-cake","name":"Decorative Heterosexual Wedding Cake","caseRef":"masterpiece","price":"$34.98","image":"🎂","description":"A beautifully detailed plastic display cake in classic white fondant with tasteful floral piping. Two small figurines on top. Jack Phillips would have been happy to sell you this one. The Court ruled 7–2 that the Colorado Civil Rights Commission displayed impermissible hostility toward Phillips's religious beliefs—but pointedly declined to resolve the deeper question. The cake is decorative only. Do not eat the cake. The constitutional issue remains unresolved and so does the frosting.","tag":"Handle With Care"},{"id":"peyote-tin","name":"Replica Peyote Display Tin","caseRef":"smith_emp_div","price":"$14.90","image":"🫙","description":"A handsome vintage-style display tin containing replica peyote buttons (resin, not organic, not psychoactive, not illegal). Alfred Smith and Galen Black were fired from their jobs at a drug rehabilitation clinic for sacramental peyote use and denied unemployment benefits. Justice Scalia's majority opinion changed Free Exercise law overnight. Three decades later, the fight over Smith rages on. This tin contains no controlled substances. It does contain multitudes.","tag":"Controversial"},{"id":"holmes-bobblehead","name":"Oliver Wendell Holmes Jr. Bobblehead","caseRef":null,"price":"$22.19","image":"🗽","description":"The Great Dissenter himself, in 6-inch bobblehead form. His head nods as if to say: 'the best test of truth is the power of the thought to get itself accepted in the competition of the market.' Holmes wrote the most famous First Amendment dissent in American history (Abrams, 1919), the most famous metaphor in free speech law (the marketplace of ideas), and also the most frequently misquoted line ('fire in a crowded theater'—which he actually said in a case upholding the Espionage Act, so maybe don't lead with that one). Battery not included. Wisdom sold separately.","tag":"Staff Pick"},{"id":"bong-hits-banner","name":"\"BONG HiTS 4 JESUS\" Banner","caseRef":"morse","price":"$18.07","image":"📜","description":"Full-size replica of the 14-foot banner that Joseph Frederick unfurled across the street from Juneau-Douglas High School as the Olympic Torch Relay passed through town in 2002. Principal Deborah Morse confiscated it and suspended Frederick. The Court held, 5–4, that schools may restrict speech 'reasonably regarded as promoting illegal drug use.' Justice Stevens's dissent called the banner 'nonsense' that was 'plainly not advocacy.' Folds for easy storage. Not endorsed by any religious figure.","tag":"Conversation Starter"},{"id":"license-plate","name":"\"LIVE FREE OR DIE\" License Plate with Removable Strip","caseRef":null,"price":"$15.77","image":"🚗","description":"A novelty replica of a New Hampshire license plate bearing the state motto, complete with a removable adhesive black strip for covering the words. George and Maxine Maynard, Jehovah's Witnesses, taped over the motto on their plates because they found it 'repugnant to their moral, religious, and political beliefs.' The State arrested George three times. The Supreme Court held that the First Amendment protects the right not to be a 'mobile billboard for the state's ideological message.' Strip included. Opinions about liberty and mortality not included.","tag":"Interactive"},{"id":"draft-card","name":"Framed Replica Selective Service Draft Card","caseRef":"obrien","price":"$19.68","image":"📋","description":"Museum-framed reproduction of a Vietnam-era Selective Service registration certificate—the kind David O'Brien burned on the steps of the South Boston Courthouse in 1966. The Court upheld his conviction, establishing the four-part O'Brien test for regulating expressive conduct when the government's interest is unrelated to suppressing expression. The draft card is a replica. The four-part test is very real and still governs expressive-conduct cases today. Not valid for Selective Service purposes.","tag":"Classic"},{"id":"amish-buggy","name":"Miniature Amish Horse-and-Buggy Set","caseRef":"yoder","price":"$21.72","image":"🐴","description":"A charming hand-painted miniature of an Old Order Amish horse and buggy, approximately 3 inches long. Jonas Yoder refused to send his children to school past eighth grade, as required by Wisconsin's compulsory-attendance law, because high school attendance was 'contrary to the Amish religion and way of life.' The Court held that the Free Exercise Clause required an exemption. This is one of only two cases where the pre-Smith compelling-interest test actually resulted in a religious exemption at the Supreme Court level. The other is Sherbert. We sell that one too, but it's on back order.","tag":"Artisan"},{"id":"military-yarmulke","name":"Boxed Military Yarmulke","caseRef":null,"price":"$16.86","image":"🎖️","description":"A regulation-style yarmulke in a presentation box, commemorating Captain Simcha Goldman's fight to wear his kippa while serving as an Air Force psychologist. Goldman lost at the Supreme Court—the majority held that military discipline justified the headgear regulation. But Congress overrode the decision within a year, enacting 10 U.S.C. § 774 to permit religious apparel while in uniform. Sometimes the First Amendment wins in the legislature even when it loses in court. One size fits most. Uniform not included.","tag":"Legislative Override"},{"id":"spectrum-newspaper","name":"The Spectrum Student Newspaper (Censored Edition)","caseRef":"hazelwood","price":"$12.88","image":"🗞️","description":"A facsimile issue of Hazelwood East High School's student newspaper, The Spectrum, with two pages dramatically blacked out in redaction ink. Principal Robert Reynolds deleted articles about teen pregnancy and divorce before publication. The Court held that schools may exercise editorial control over school-sponsored speech if 'reasonably related to legitimate pedagogical concerns.' The blacked-out pages contain the original articles, printed in invisible ink. Just kidding. They're just black. The pedagogical concerns remain a matter of debate.","tag":"Redacted"},{"id":"slants-shirt","name":"\"THE SLANTS\" Band T-Shirt","caseRef":null,"price":"$20.17","image":"👕","description":"Official-style concert tee for The Slants, the Asian-American rock band whose name the Patent and Trademark Office refused to register as 'disparaging.' Simon Tam, the band's founder, fought the denial all the way to the Supreme Court. The unanimous decision struck down the Lanham Act's disparagement clause as viewpoint discrimination. Justice Alito: 'Speech may not be banned on the ground that it expresses ideas that offend.' This shirt is 100% cotton and 100% registered.","tag":"Unanimous"},{"id":"hillary-movie-dvd","name":"Hillary: The Movie Replica DVD Case","caseRef":"citizens_united","price":"$26.10","image":"📀","description":"A replica DVD case for the documentary that changed campaign finance law forever. Citizens United produced a 90-minute film critical of Hillary Clinton and wanted to distribute it via video-on-demand during the 2008 primary season. The FEC said no—the Bipartisan Campaign Reform Act prohibited corporate-funded 'electioneering communications' within 30 days of a primary. The resulting Supreme Court decision held that political speech doesn't lose protection because its source is a corporation. Justice Stevens wrote a 90-page dissent. The DVD case is empty. The consequences are not.","tag":"Game Changer"},{"id":"video-game-cartridge","name":"Retro Video Game Cartridge with California Warning Label","caseRef":null,"price":"$11.11","image":"🎮","description":"A novelty retro-style game cartridge bearing a large red-and-yellow California 'VIOLENT VIDEO GAME' warning label. California tried to ban the sale of violent video games to minors. The Court struck down the law, 7–2, holding that video games are protected expression and that the state had not shown a compelling interest. Justice Scalia's majority opinion noted that Grimm's Fairy Tales are plenty violent. Justice Thomas's dissent argued the Founders would not have understood 'freedom of speech' to include a right to speak to minors without parental consent. Cartridge is decorative. No game is inside. The debate about children and media is eternal.","tag":"Player One"},{"id":"redacted-document","name":"Classified Pentagon Document (Redacted)","caseRef":"pentagon_papers","price":"$19.71","image":"📂","description":"A replica classified government file folder stamped TOP SECRET, containing several pages of heavily redacted text with thick black bars obscuring most of the content. Evokes the Pentagon Papers case, in which the Nixon administration sought to enjoin the New York Times and Washington Post from publishing a classified history of the Vietnam War. The Court rejected the prior restraint in a landmark per curiam decision issued just 15 days after the first story ran. The redactions in this replica are cosmetic. The government's redactions were not.","tag":"Declassified"}];
+const quizData = [{"question":"A student wears a T-shirt to school reading \"The government is lying to you.\" The principal confiscates it. Your instinct is:","answers":[{"text":"The shirt is political speech—the marketplace of ideas demands we hear it, even if it's wrong.","theorist":"holmes"},{"text":"Self-governance requires that citizens, including young ones, be free to criticize the government.","theorist":"meiklejohn"},{"text":"The student's dignity and self-expression are at stake. The message doesn't need to be 'useful' to be protected.","theorist":"baker"},{"text":"If the school silences this, it teaches students that authority is more important than disagreement. Bad lesson.","theorist":"bollinger"}]},{"question":"A city bans panhandling on public sidewalks. A homeless man challenges the ban. You think:","answers":[{"text":"Asking for money communicates a message about poverty and need. It's speech in the marketplace.","theorist":"holmes"},{"text":"This is the kind of speech the powerful would rather not hear. Protecting it checks government overreach.","theorist":"blasi"},{"text":"The ban silences the most vulnerable. Free speech doctrine should account for who gets silenced.","theorist":"fiss"},{"text":"The man's autonomy to speak—even to beg—is fundamental to his personhood.","theorist":"baker"}]},{"question":"Congress passes a law requiring social media platforms to carry all political speech without moderation. Your reaction:","answers":[{"text":"More speech is always better. Let the ideas compete and users will sort truth from falsehood.","theorist":"holmes"},{"text":"Democracy needs an informed public. If platforms suppress political speech, voters can't govern themselves.","theorist":"meiklejohn"},{"text":"The platforms are private actors. Compelling their speech violates their autonomy just as much as censoring yours.","theorist":"baker"},{"text":"Without some intervention, powerful platforms will amplify some voices and bury others. Equality matters here.","theorist":"fiss"}]},{"question":"A neo-Nazi group applies for a permit to march through a predominantly Jewish neighborhood. You think the permit should be:","answers":[{"text":"Granted. The cure for bad speech is more speech, not enforced silence.","theorist":"holmes"},{"text":"Granted. Tolerating speech we despise is how a democratic society builds the muscle of pluralism.","theorist":"bollinger"},{"text":"Denied, or at least rerouted. This isn't 'ideas'—it's an act of intimidation targeting a vulnerable community.","theorist":"matsuda"},{"text":"Granted, reluctantly. But this is exactly the kind of case that reveals the limits of abstract free-speech theory.","theorist":"blasi"}]},{"question":"A public university disinvites a controversial speaker after student protests. Your take:","answers":[{"text":"The university is supposed to be the ultimate marketplace of ideas. Disinvitation is a market failure.","theorist":"holmes"},{"text":"Democratic self-governance requires exposure to views we reject. The students need to hear this.","theorist":"meiklejohn"},{"text":"The speaker's autonomy matters, but so does the university's institutional mission. It's complicated.","theorist":"post"},{"text":"Who is the speaker, and what are they saying? If it's targeted harassment of marginalized students, protection has limits.","theorist":"matsuda"}]},{"question":"A state passes a law banning \"deepfake\" political ads within 60 days of an election. You think:","answers":[{"text":"Dangerous. The government deciding what's 'fake' is exactly the censorship the First Amendment forbids.","theorist":"holmes"},{"text":"Voters need accurate information to self-govern. Deepfakes poison the well. Some regulation is justified.","theorist":"meiklejohn"},{"text":"The real question is who controls the digital infrastructure. Focus on the platforms, not the content.","theorist":"balkin"},{"text":"If deepfakes disproportionately target women and minorities, the equality dimension matters.","theorist":"fiss"}]}];
+const theoristData = {"holmes":{"name":"Oliver Wendell Holmes Jr.","title":"The Marketplace Maverick","description":"You believe truth emerges from the free competition of ideas. Let every voice speak, and trust the intellectual marketplace to sort it out. You're comfortable with chaos because you think order imposed by censorship is worse. You probably quote the Abrams dissent at dinner parties.","motto":"\"The best test of truth is the power of the thought to get itself accepted in the competition of the market.\""},"meiklejohn":{"name":"Alexander Meiklejohn","title":"The Democracy Defender","description":"For you, free speech is about self-governance. Democracy can't function if citizens don't have access to all relevant information and viewpoints. Political speech sits at the core of the First Amendment; everything else is secondary. You're the person who actually reads the voter pamphlet.","motto":"\"The First Amendment is not the guardian of unregulated talkativeness.\""},"baker":{"name":"C. Edwin Baker","title":"The Autonomy Champion","description":"You think free speech is fundamentally about the speaker's dignity and self-realization. Expression doesn't need to serve democracy or truth-seeking to deserve protection—it matters because it's how people become who they are. You defend the poet and the protester with equal vigor.","motto":"\"Liberty of expression is constitutive of individual autonomy.\""},"bollinger":{"name":"Lee Bollinger","title":"The Tolerance Teacher","description":"You see free speech protection as a training ground for democratic virtue. By protecting the speech we despise, we build a society that can handle disagreement without reaching for the censor's pen. You're playing the long game: not just protecting speakers, but shaping citizens.","motto":"\"The function of free speech is to build the social capacity for tolerance.\""},"blasi":{"name":"Vincent Blasi","title":"The Watchdog","description":"You value free speech primarily as a check on government abuse. When officials overreach, it's speech—journalism, protest, whistleblowing—that sounds the alarm. You worry most about speech restrictions in times of crisis, when the checking function matters most and is most at risk.","motto":"\"Free speech serves its highest purpose as a check on the abuse of official power.\""},"fiss":{"name":"Owen Fiss","title":"The Equalizer","description":"You think the traditional free-speech framework ignores power. When money talks and marginalized voices are drowned out, formal freedom of speech produces substantive inequality. You're willing to consider government intervention—not to silence speakers, but to amplify the unheard.","motto":"\"The state may have to act to further the robustness of public debate.\""},"matsuda":{"name":"Mari Matsuda","title":"The Justice Seeker","description":"You see speech through the lens of historical injustice. When hate speech targets communities that have suffered systematic oppression, you question whether 'more speech' is really an adequate remedy. You push the First Amendment to reckon with its blind spots.","motto":"\"When racist speech is tolerated, the voices of those most affected are silenced.\""},"post":{"name":"Robert Post","title":"The Democratic Legitimist","description":"You care about democratic legitimacy—the process by which public opinion forms and makes government responsive to the people. Any government regulation of public discourse threatens that process. But you're nuanced: institutions like universities have their own speech norms, and that's fine.","motto":"\"The First Amendment protects the communicative processes necessary for democratic self-governance.\""},"balkin":{"name":"Jack Balkin","title":"The Digital Architect","description":"You think the infrastructure of free expression matters as much as the content. In the digital age, who controls the platforms, algorithms, and networks controls the public sphere. You're looking at the plumbing while everyone else argues about the water.","motto":"\"Freedom of speech depends on a free and open infrastructure of expression.\""}};
+const madLibsData = {"blanks":[{"id":"entity","label":"Who is restricted?","placeholder":"e.g., Congress, the HOA, my cat","options":["Congress","The Dean","The Algorithm","My Landlord","The HOA Board","Local Parking Enforcement"]},{"id":"action","label":"What can't they do?","placeholder":"e.g., abridging, regulating, judging","options":["abridging","moderating","side-eyeing","live-tweeting about","sending passive-aggressive emails about","algorithmic suppression of"]},{"id":"right","label":"What right is protected?","placeholder":"e.g., speech, memes, interpretive dance","options":["speech","memes","strongly worded emails","interpretive dance","the right to reply-all","the freedom to eat lunch at one's desk"]}],"analyses":{"Congress":"You chose the actual text! The First Amendment binds Congress (and, via incorporation, the states). You're an originalist—or you just read carefully.","The Dean":"Interesting. Public university officials ARE bound by the First Amendment. Private university deans? Not directly. Your amendment might actually work on campus.","The Algorithm":"You've identified the 21st-century frontier. Algorithms aren't state actors (yet), but Jack Balkin would love this answer.","My Landlord":"The First Amendment applies to government action, not private landlords. But honestly, someone should make a law about those lease addenda.","The HOA Board":"HOAs are private entities, so the First Amendment doesn't apply. But you've correctly identified one of the most feared governing bodies in America.","Local Parking Enforcement":"State action? Technically yes. But the Supreme Court has bigger fish to fry. File a Section 1983 suit and report back."}};
+
+// Tab switching
+document.querySelectorAll('.shop-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.shop-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.shop-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+// --- ARTIFACTS ---
+function buildArtifacts() {
+  const grid = document.getElementById('artifact-grid');
+  artifactData.forEach(a => {
+    const card = document.createElement('div');
+    card.className = 'artifact-card';
+    let caseBtn = '';
+    if (a.caseRef && cases[a.caseRef]) {
+      caseBtn = '<a href="#" class="case-link artifact-case-link" data-case="' + a.caseRef + '">View case</a>';
+    }
+    card.innerHTML =
+      '<div class="artifact-tag">' + a.tag + '</div>' +
+      '<div class="artifact-icon">' + a.image + '</div>' +
+      '<div class="artifact-name">' + a.name + '</div>' +
+      '<div class="artifact-price">' + a.price + '</div>' +
+      '<div class="artifact-desc">' + a.description + '</div>' +
+      '<span class="artifact-buy" onclick="alert(&quot;This is a museum gift shop in the most metaphorical sense. No actual commerce occurs here. The First Amendment protects our right to pretend, though.&quot;)">Add to Cart</span>' +
+      caseBtn;
+    grid.appendChild(card);
+  });
+}
+
+// --- QUIZ ---
+let quizAnswers = {};
+function buildQuiz() {
+  const container = document.getElementById('quiz-container');
+  quizData.forEach((q, i) => {
+    const div = document.createElement('div');
+    div.className = 'quiz-question';
+    let answersHtml = '';
+    q.answers.forEach((a, j) => {
+      answersHtml += '<button class="quiz-answer" data-q="' + i + '" data-theorist="' + a.theorist + '">' + a.text + '</button>';
+    });
+    div.innerHTML = '<div class="q-number">Question ' + (i + 1) + ' of ' + quizData.length + '</div>' +
+      '<div class="q-text">' + q.question + '</div>' + answersHtml;
+    container.appendChild(div);
+  });
+  container.innerHTML += '<button class="quiz-submit" id="quiz-submit">Reveal My Theorist</button>';
+
+  container.addEventListener('click', e => {
+    if (e.target.classList.contains('quiz-answer')) {
+      const qIdx = e.target.dataset.q;
+      container.querySelectorAll('.quiz-answer[data-q="' + qIdx + '"]').forEach(b => b.classList.remove('selected'));
+      e.target.classList.add('selected');
+      quizAnswers[qIdx] = e.target.dataset.theorist;
+    }
+  });
+
+  document.getElementById('quiz-submit').addEventListener('click', () => {
+    const answered = Object.keys(quizAnswers).length;
+    if (answered < quizData.length) {
+      alert('Please answer all ' + quizData.length + ' questions first! You have answered ' + answered + '.');
+      return;
+    }
+    const scores = {};
+    Object.values(quizAnswers).forEach(t => { scores[t] = (scores[t] || 0) + 1; });
+    const winner = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+    const t = theoristData[winner];
+    const result = document.getElementById('quiz-result');
+    result.innerHTML =
+      '<div class="result-name">' + t.name + '</div>' +
+      '<div class="result-title">' + t.title + '</div>' +
+      '<div class="result-desc">' + t.description + '</div>' +
+      '<div class="result-motto">' + t.motto + '</div>' +
+      '<button class="quiz-reset" onclick="resetQuiz()">Take Again</button>';
+    result.style.display = 'block';
+    document.getElementById('quiz-container').style.display = 'none';
+    result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+}
+function resetQuiz() {
+  quizAnswers = {};
+  document.querySelectorAll('.quiz-answer').forEach(b => b.classList.remove('selected'));
+  document.getElementById('quiz-result').style.display = 'none';
+  document.getElementById('quiz-container').style.display = 'block';
+}
+
+// --- POCKET CONSTITUTION ---
+let pocketPicks = [];
+function buildPocket() {
+  const search = document.getElementById('pocket-search');
+  const suggestions = document.getElementById('pocket-suggestions');
+  const picksDiv = document.getElementById('pocket-picks');
+
+  search.addEventListener('input', () => {
+    const q = search.value.toLowerCase();
+    if (q.length < 2) { suggestions.style.display = 'none'; return; }
+    const matches = Object.entries(cases).filter(([id, c]) =>
+      c.name.toLowerCase().includes(q) || String(c.year).includes(q)
+    ).slice(0, 8);
+    if (matches.length === 0) { suggestions.style.display = 'none'; return; }
+    suggestions.innerHTML = matches.map(([id, c]) =>
+      '<div class="pocket-suggestion" data-id="' + id + '">' + c.name + ' (' + c.year + ')</div>'
+    ).join('');
+    suggestions.style.display = 'block';
+  });
+
+  suggestions.addEventListener('click', e => {
+    const sug = e.target.closest('.pocket-suggestion');
+    if (!sug) return;
+    const id = sug.dataset.id;
+    if (pocketPicks.includes(id)) return;
+    if (pocketPicks.length >= 5) { alert('Maximum 5 cases! Remove one first.'); return; }
+    pocketPicks.push(id);
+    renderPicks();
+    search.value = '';
+    suggestions.style.display = 'none';
+  });
+
+  document.getElementById('pocket-generate').addEventListener('click', () => {
+    if (pocketPicks.length === 0) { alert('Pick at least one case!'); return; }
+    const card = document.getElementById('pocket-card');
+    let html = '<h3>My First Amendment Starter Pack</h3>';
+    pocketPicks.forEach(id => {
+      const c = cases[id];
+      if (!c) return;
+      const shortHolding = c.holding.length > 120 ? c.holding.substring(0, 120) + '...' : c.holding;
+      html += '<div class="pocket-item"><div class="pocket-case-name">' + c.name + ' (' + c.year + ')</div>' +
+        '<div class="pocket-holding">' + shortHolding + '</div></div>';
+    });
+    card.innerHTML = html;
+    card.style.display = 'block';
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  function renderPicks() {
+    picksDiv.innerHTML = pocketPicks.map(id => {
+      const c = cases[id];
+      return '<span class="pocket-chip">' + (c ? c.name : id) +
+        '<span class="chip-remove" data-id="' + id + '">&times;</span></span>';
+    }).join('');
+    picksDiv.querySelectorAll('.chip-remove').forEach(btn => {
+      btn.addEventListener('click', () => {
+        pocketPicks = pocketPicks.filter(p => p !== btn.dataset.id);
+        renderPicks();
+      });
+    });
+  }
+}
+
+// --- MAD LIBS ---
+function buildMadLibs() {
+  const controls = document.getElementById('madlibs-controls');
+  const analysis = document.getElementById('madlibs-analysis');
+
+  madLibsData.blanks.forEach(b => {
+    const field = document.createElement('div');
+    field.className = 'madlibs-field';
+    let optionsHtml = '<option value="">-- pick or type your own --</option>';
+    b.options.forEach(o => { optionsHtml += '<option value="' + o + '">' + o + '</option>'; });
+    field.innerHTML = '<label>' + b.label + '</label>' +
+      '<select id="ml-select-' + b.id + '">' + optionsHtml + '</select>';
+    controls.appendChild(field);
+  });
+
+  controls.querySelectorAll('select').forEach(sel => {
+    sel.addEventListener('change', updateMadLibs);
+  });
+
+  function updateMadLibs() {
+    const entity = document.getElementById('ml-select-entity').value || '______';
+    const action = document.getElementById('ml-select-action').value || '______';
+    const right = document.getElementById('ml-select-right').value || '______';
+
+    document.getElementById('ml-entity').textContent = entity;
+    document.getElementById('ml-action').textContent = action;
+    document.getElementById('ml-right').textContent = right;
+
+    if (entity && entity !== '______') {
+      const a = madLibsData.analyses[entity];
+      if (a) {
+        analysis.textContent = a;
+        analysis.style.display = 'block';
+      }
+    }
+    if (entity !== '______' && action !== '______' && right !== '______') {
+      const real = 'Congress shall make no law abridging the freedom of speech.';
+      const yours = entity + ' shall make no law ' + action + ' the freedom of ' + right + '.';
+      if (entity === 'Congress' && action === 'abridging' && right === 'speech') {
+        analysis.innerHTML = '<strong>You wrote the actual First Amendment.</strong> James Madison approves. Now go read the other 44 words.';
+      }
+      analysis.style.display = 'block';
+    }
+  }
+}
+
+// --- TRADING CARDS ---
+let drawnCards = new Set();
+function buildTradingCards() {
+  document.getElementById('draw-card').addEventListener('click', drawCard);
+}
+function drawCard() {
+  const caseIds = Object.keys(cases);
+  const id = caseIds[Math.floor(Math.random() * caseIds.length)];
+  const c = cases[id];
+  drawnCards.add(id);
+
+  // Rarity based on how "landmark" the case is (approximate by gallery + year)
+  let rarity, rarityClass;
+  const landmarkIds = ['nyt_sullivan','johnson','smith_emp_div','brandenburg','buckley','citizens_united','tinker','barnette','lemon','near','pentagon_papers','reed','fulton','kennedy_bremerton'];
+  const epicIds = ['rav','cohen_v_ca','obrien','sherbert','yoder','miller','engel','chaplinsky','masterpiece','creative_303','hobby_lobby','lukumi','hazelwood','morse'];
+  if (landmarkIds.includes(id)) { rarity = 'Legendary'; rarityClass = 'tc-rarity-legendary'; }
+  else if (epicIds.includes(id)) { rarity = 'Epic'; rarityClass = 'tc-rarity-epic'; }
+  else if (c.dissent && c.dissent.length > 100) { rarity = 'Rare'; rarityClass = 'tc-rarity-rare'; }
+  else if (c.year < 1970) { rarity = 'Uncommon'; rarityClass = 'tc-rarity-uncommon'; }
+  else { rarity = 'Common'; rarityClass = 'tc-rarity-common'; }
+
+  const info = galleries[c.gallery] || { name: 'Unknown', color: '#888' };
+  const shortFacts = c.facts ? (c.facts.length > 150 ? c.facts.substring(0, 150) + '...' : c.facts) : '';
+  const shortHolding = c.holding ? (c.holding.length > 150 ? c.holding.substring(0, 150) + '...' : c.holding) : '';
+
+  const card = document.getElementById('trading-card');
+  card.innerHTML =
+    '<div class="tc-header">' +
+      '<div class="tc-rarity ' + rarityClass + '">' + rarity + '</div>' +
+      '<div class="tc-name">' + c.name + '</div>' +
+      '<div class="tc-cite">' + c.cite + '</div>' +
+    '</div>' +
+    '<div class="tc-body">' +
+      '<div class="tc-label">Facts</div>' +
+      '<div class="tc-value">' + shortFacts + '</div>' +
+      '<div class="tc-label">Holding</div>' +
+      '<div class="tc-value">' + shortHolding + '</div>' +
+    '</div>' +
+    '<div class="tc-footer">' +
+      '<span class="tc-gallery-tag" style="background:' + info.color + '">' + info.name + '</span>' +
+      '<span class="tc-year">' + c.year + '</span>' +
+    '</div>';
+  card.style.display = 'block';
+  document.getElementById('card-counter').textContent = 'Collection: ' + drawnCards.size + ' / ' + caseIds.length + ' cases drawn';
+}
+
 // Init
 buildGallery();
 buildHistory();
 buildTheories();
+buildArtifacts();
+buildQuiz();
+buildPocket();
+buildMadLibs();
+buildTradingCards();
 </script>
 </body>
 </html>
